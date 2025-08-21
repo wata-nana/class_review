@@ -34,10 +34,10 @@ class Customer:
     def info_csv(self):
         return f"{self.full_name()},{self.age},{self.entry_fee()}"
 
-    #  C-7.C-8.顧客情報を任意の形式で返すメゾット
-    def information(self):
-        # 基本となる構文の設定
-        template = f"{self.full_name()}{{}}{self.age}{{}}{self.entry_fee()}"
+    #  C-7.顧客情報をtab形式で返すメゾット
+    def info_tab(self):
+        # width = len( * column_num))
+        return f"{self.full_name()} {self.age} {self.entry_fee()}"
 
         # 出力フォーマットの選択
         format = input("形式を以下から選んでください(tab,pipe):")
