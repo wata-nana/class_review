@@ -36,21 +36,14 @@ class Customer:
 
     #  C-7.顧客情報をtab形式で返すメゾット
     def info_tab(self):
-        # width = len( * column_num))
-        return f"{self.full_name()} {self.age} {self.entry_fee()}"
+        width_n = len(self.full_name())
+        width_a = len(str(self.age))
+        width_e = len(str(self.entry_fee()))
+        return f"{self.full_name():<{width_n}} {self.age:<{width_a}} {self.entry_fee():<{width_e}}"
 
-        # 出力フォーマットの選択
-        format = input("形式を以下から選んでください(tab,pipe):")
-
-        # タイプ別の文章処理
-        if format == "tab":
-            get_info = template.format(" ", " ")
-        elif format == "pipe":
-            get_info = template.format("|", "|")
-        else:
-            get_info = print("入力が正しくありません。")
-
-        return get_info
+    #  C-8.顧客情報をpipe形式で返すメゾット
+    def info_pipe(self):
+        return f"{self.full_name()}|{self.age}|{self.entry_fee()}"
 
 
 # 直接実行時に基本課題の回答が出力されるよう実装
@@ -80,4 +73,5 @@ if __name__ == "__main__":
     print(ieyasu.info_csv())  # "Ieyasu Tokugawa,75,1200" という値を出力
     print(michelle.info_csv())
 
-    print(michelle.information())  # 形式を選んで値を出力
+    print(michelle.info_tab())  # tab形式で出力
+    print(michelle.info_pipe())  # pipe形式で出力
