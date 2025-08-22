@@ -36,7 +36,7 @@ class Customer:
 
     #  C-7.顧客情報をtab形式で返すメゾット
     def info_tab(self):
-        return f"{self.full_name():<15} {self.age:<3} {self.entry_fee():<4}"
+        return f"{self.full_name()}\t {self.age:<3}\t {self.entry_fee():<4}\t"
 
     #  C-8.顧客情報をpipe形式で返すメゾット
     def info_pipe(self):
